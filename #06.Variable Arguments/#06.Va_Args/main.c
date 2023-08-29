@@ -2,18 +2,18 @@
 #include <stdarg.h>
 
 /* 
-    Ứng dụng: Khi không biết được đầu vào cụ thể
+    Ứng dụng: Khi không biết được số lượng tham số đầu vào cụ thể cần truyền vào
  */
 int Sum(int num, ...){
     int sum = 0;
-    va_list va;         //B1: Khoi tao 1 bien kieu va_list 
-                        // va: la 1 con tro
+    va_list va;         //Khoi tao 1 bien kieu va_list 
+                        //va: la 1 con tro
                         //va_list chua thong tin ma va_start, va_stop,.... can 
     va_start(va, num);  //
 
     for(int i=0; i<num; i++){
         sum += va_arg(va, int); //va_arg() khi duoc goi se doc vi tri dau tien tai chỗ (...)
-                                // Moi lan đọc hàm này nó sẽ di chuyển nhhư con trỏ
+                                // Moi lan đọc hàm này nó sẽ di chuyển như con trỏ
     }
     va_end(va);         //Giải phóng vùng nhớ của va
 
