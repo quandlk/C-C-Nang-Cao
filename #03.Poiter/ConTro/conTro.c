@@ -4,6 +4,7 @@ void tong(int a, int b){
     printf("Tong a va b: %d\n", a+b);
 }
 
+
 int main(){
     int i = 20;
     double d = 12.5;
